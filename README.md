@@ -28,7 +28,7 @@ After joining tables (employee, titles, salaries) and filtering to birth dates i
 
 **Fig.3:**<br>
 
-![](images/Fig3.png)
+![](images/Fig3.png)git 
 
 
 However, there seems to be a limitation in this method.  Without the highlighted line of code this method will provide a list containing the most recent title of the employees born 1952-1955, but only a subset of these employees are current employees.  The line of code above has been added to pare down the list to only current employees (to_date = 9999-01-01).
@@ -40,7 +40,7 @@ After testing a theory, I found that the same information can be obtained with a
 ![](images/Fig4.png)
 
 The number of retiring employees by title is obtained with the SELECT COUNT query (Fig.5) on the table developed above.<br>
-This table is exported to:  [retirees_by_title.csv](data)
+This table is exported to:  [retirees_by_title.csv](Data)
 
 **Fig.5:**<br>
 
