@@ -40,7 +40,7 @@ After testing a theory, I found that the same information can be obtained with a
 ![](images/Fig4.png)
 
 The number of retiring employees by title is obtained with the SELECT COUNT query (Fig.5) on the table developed above.<br>
-This table is exported to:  [retirees_by_title.csv](data/retirees_by_title.csv)
+This table is exported to:  [retirees_by_title.csv](data)
 
 **Fig.5:**<br>
 
