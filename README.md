@@ -39,7 +39,7 @@ However, there seems to be a limitation in this method.  This method will provid
 
 **Fig.4:**<br>
 
-![](images/Fig4.PNG);
+![](images/Fig4.png)
 
 The number of retiring employees by title is obtained with the SELECT COUNT query (Fig.5) on the table developed above.<br>
 This table is exported to the [Data directory](Data):  [retirees_by_title.csv](Data/retirees_by_title.csv)
