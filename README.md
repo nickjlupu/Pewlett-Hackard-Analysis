@@ -6,7 +6,7 @@
 This week's lessons centered around HR data for a large company with a great deal of people aging into retirement.  6 csv files were provided as data to load into the 6 database tables created in PostgreSQL throughout the module for this week.  The data consists of employee information listed in various tables.  The database is built as shown below in the ERD (Fig.1) and then used as a base to demonstrate various SQL query techniques.  
 
 Fig.1
-![](images/Fig1.PNG) 
+![](images/Fig1.png) 
 
 ## Technical Analysis
 
