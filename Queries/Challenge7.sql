@@ -35,7 +35,7 @@ FROM
  (PARTITION BY (emp_no)
  ORDER BY from_date DESC) rn
  FROM deliverable_one_a
- ) tmp WHERE rn = 1 AND to_date = '9999-01-01'
+ ) tmp WHERE rn = 1
 ORDER BY emp_no;
 
 
@@ -52,7 +52,7 @@ FROM titles as t
 WHERE t.to_date = ('9999-01-01')
 GROUP BY t.title;
 
--- Deliverable #1a. 
+-- Deliverable #1c - test. 
 -- Create a table with ee#, first & last name, title, from date, & salary
 -- This table will be a list of CURRENT employees born between 1/1/1952-12/31/1955
 SELECT e.emp_no,
@@ -69,3 +69,27 @@ FROM employees AS e
 	ON (t.emp_no = s.emp_no)
 WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 AND t.to_date = ('9999-01-01');
+
+-- group by title to show how many of each title will retire - test 
+SELECT COUNT(test.emp_no), test.title
+INTO retirees_by_title_test
+FROM test_one as test
+GROUP BY test.title;
+
+
+-- Deliverable 2.
+-- Create a table with emp_no, first & last name, title, from and to dates
+-- where dob in 1965
+SELECT e.emp_no,
+	e.first_name,
+	e.last_name,
+	t.title,
+	t.from_date,
+	t.to_date
+INTO mentorship
+FROM employees AS e
+	INNER JOIN titles as t
+	ON (e.emp_no = t.emp_no)
+WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+AND t.to_date = '9999-01-01';
+
