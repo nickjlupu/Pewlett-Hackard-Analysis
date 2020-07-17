@@ -94,11 +94,14 @@ AND t.to_date = '9999-01-01';
 
 
 
-SELECT SUM(nick.count)
-FROM retirees_by_title_nick as nick;
+SELECT SUM(count)
+FROM retirees_by_title_nick;
 
-SELECT SUM(ret.count)
-FROM retirees_by_title as ret;
+SELECT SUM(count)
+FROM retirees_by_title;
 
-SELECT SUM(allemp.count)
-FROM all_emps_by_title as allemp;
+SELECT SUM(count)
+FROM all_emps_by_title;
+
+SELECT COUNT(emp_no)
+FROM mentorship;
