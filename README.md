@@ -20,6 +20,7 @@ Fig.1<br>
   * **Current** Employees born between 1/1/1952 and 12/31/1955 (does not contain the same hire date requirement as in the modules)
   * Number of each title retiring
   * Number of current employees with each title (all employees, not just those retiring)
+  * **Current** Employees born in 1965 for the mentorship program
 * **Current** Employees means a to_date = '9999-01-01'
 
 
