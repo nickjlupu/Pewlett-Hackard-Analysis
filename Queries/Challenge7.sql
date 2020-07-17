@@ -72,10 +72,9 @@ AND t.to_date = ('9999-01-01');
 
 -- group by title to show how many of each title will retire - test 
 SELECT COUNT(test.emp_no), test.title
-INTO retirees_by_title_test
+INTO retirees_by_title_nick
 FROM test_one as test
 GROUP BY test.title;
-
 
 -- Deliverable 2.
 -- Create a table with emp_no, first & last name, title, from and to dates
@@ -93,3 +92,13 @@ FROM employees AS e
 WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 AND t.to_date = '9999-01-01';
 
+
+
+SELECT SUM(nick.count)
+FROM retirees_by_title_nick as nick;
+
+SELECT SUM(ret.count)
+FROM retirees_by_title as ret;
+
+SELECT SUM(allemp.count)
+FROM all_emps_by_title as allemp;

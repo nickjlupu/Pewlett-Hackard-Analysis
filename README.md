@@ -23,6 +23,8 @@ Fig.1
 
 
 ### Technical Steps
+Note:  All queries can be found in the file: [Challenge7.sql](Queries/Challenge7.sql)
+
 After joining tables (employee, titles, salaries) and filtering to birth dates in 1952-1955 (Fig.2), the instructions in the challenge walk you through the use of partitioning the data to find and remove unwanted duplicate rows (Fig.3).  
 This table is exported to the [Data directory](Data): [deliverable_one_b.csv](Data/deliverable_one_b.csv)
 
@@ -36,13 +38,16 @@ This table is exported to the [Data directory](Data): [deliverable_one_b.csv](Da
 
 
 However, there seems to be a limitation in this method.  This method will provide a list containing the most recent title of the employees born 1952-1955, but only a subset of these employees are current employees.  The list needs to be pared down to only current employees (titles.to_date = 9999-01-01).  However, this cannot be accomplished unless the to_date column is included in the SELECT statement.  When the to_date column is used instead of the from_date column as requested in the challenge instructions, the method works as intended (only showing **current** employees after the partitioning step).  Although, after testing a theory, I found that the same information can be obtained with a simple query without partitioning (Fig.4).  I have saved all tables in the 
+This table generated from my method is exported to the [Data directory](Data): [test_one.csv](Data/test_one.csv)
 
 **Fig.4:**<br>
 
 ![](images/Fig4.png)
 
-The number of retiring employees by title is obtained with the SELECT COUNT query (Fig.5) on the table developed above.<br>
-This table is exported to the [Data directory](Data):  [retirees_by_title.csv](Data/retirees_by_title.csv)
+The number of retiring employees by title is obtained with the SELECT COUNT query (Fig.5) on the tables developed above.<br>
+The table from the method in the instructions is exported to the [Data directory](Data):  [retirees_by_title.csv](Data/retirees_by_title.csv)
+The table from my method is exported to the [Data directory](Data):  [retirees_by_title_nick.csv](Data/retirees_by_title_nick.csv)
+
 
 **Fig.5:**<br>
 
@@ -65,28 +70,30 @@ This table is exported to the [Data directory](Data): [mentorship.csv](Data/ment
 
 ## Results
 
-The total number of **all current** employees is 240k, broken down by title as shown below in Fig.8.
+The total number of **all current** employees is 240,124, broken down by title as shown below in Fig.8.
 This table is exported to the [Data directory](Data):  [all_emps_by_title.csv](Data/all_emps_by_title.csv)
 
 **Fig.8:**<br>
 
 ![](images/Fig8.PNG)
 
-The first method (with the partitioning) gives a total of 90k employees born between 1952 and 1955 broken down as shown below in Fig.9.
+The first method (with the partitioning) gives a total of 90,398 employees born between 1952 and 1955 broken down as shown below in Fig.9.
 This table is exported to the [Data directory](Data):  [retirees_by_title.csv](Data/retirees_by_title.csv)
 
 **Fig.9:**<br>
 
-![](images/Fig9.PNG)
+![](images/Fig9a.PNG)
+![](images/Fig9b.PNG)
 
-However, as discussed above, I believe this method is not acurate and we should look at only **current** employees (to_date = 9999-01-01).  My method (described above in Technical Steps Section) gives a total of 70k retirees broken down as shown below in Fig.10.
-This table is exported to the [Data directory](Data):  [retirees_by_title_test.csv](Data/retirees_by_title_test.csv)
+However, as discussed above, I believe this method is not acurate and we should look at only **current** employees (to_date = 9999-01-01).  My method (described above in Technical Steps Section) gives a total of 72,458 retirees broken down as shown below in Fig.10.
+This table is exported to the [Data directory](Data):  [retirees_by_title_nick.csv](Data/retirees_by_title_nick.csv)
 
 **Fig.10:**<br>
 
-![](images/Fig10.PNG)
+![](images/Fig10a.PNG)
+![](images/Fig10b.PNG)
 
 From the mentorship program table we can run a SELECT COUNT statement to get the number of employees that are available for the mentorship role.  
 
 ## Recommendations for Further Analysis
-
+In an effort to bolster the mentorship program, I would make queries to the database to find out how many young employeees there were at PH.  Additionally, we can explore how long these employees have been in their current roles and get the potential proteges identified for the potential mentors we have already found.  
